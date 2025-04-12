@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Metadatos y enlaces a estilos -->
+  <!-- Incluye los metadatos básicos como el charset y el viewport para la compatibilidad con dispositivos móviles -->
+  <!-- Enlaces a Bootstrap, Bootstrap Icons y el archivo CSS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>proyecto con bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+  <!-- Bootstrap CSS (<head>) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="estilos/styles-global.css" />
+  <link rel="stylesheet" href="estilos/feedServitech.css" />
+  <link rel="stylesheet" href="estilos/expert.css" />
+  <link rel="stylesheet" href="estilos/contact.css" />
+  
+  <style>
+    @media (max-width: 30px) {
+      .navbar-brand img {
+        width: 15px;
+        /* Aumentar el tamaño del logo en pantallas pequeñas */
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Contenedor para cargar el header -->
+  <div id="header-placeholder"></div>
+  <script>
+    // Cargar dinámicamente el contenido del header desde el archivo header.html
+    fetch('componentes/header.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header-placeholder').innerHTML = data);
+  </script>
+
+  <!-- Modal de Inicio de Sesión -->
+  <!-- Modal que permite a los usuarios iniciar sesión -->
+  <!-- Contiene un formulario con campos para correo y contraseña -->
+  <section class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background-color: #212529; border-radius: 10px;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-warning fw-bold" id="loginModalLabel">
+            Iniciar Sesión
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="imagenes/LOGO SERVITECH BLANCO.svg" alt="Logo Servitech" style="width: 220px; margin-bottom: 20px;">
+          <h5 class="text-warning fw-bold">Bienvenido de nuevo</h5>
+          <section class="form-register">
+            <h5>Ingresa usuario</h5>
+            <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+            <input class="controls" type="password" name="contraseña" id="contraseña"
+              placeholder="Ingrese su Contraseña">
+            <p>Estoy de acuerdo con <a href="#">Términos y Condiciones</a></p>
+            <input class="botons" type="submit" value="Iniciar Sesión">
+            <p><a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">¿Aún no tienes
+                una cuenta?</a></p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de Registro -->
+  <!-- Modal que permite a los usuarios registrarse -->
+  <!-- Contiene un formulario con campos para nombre, apellido, correo y contraseña -->
+  <!-- Modal de Registro -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <!-- Contenedor del modal centrado -->
+    <div class="modal-dialog modal-dialog-centered">
+      <!-- Contenido del modal -->
+      <div class="modal-content" style="background-color: #212529; border-radius: 10px;">
+        <!-- Encabezado del modal -->
+        <div class="modal-header border-0">
+          <!-- Título del modal -->
+          <h5 class="modal-title text-warning fw-bold" id="registerModalLabel">
+            Registro
+          </h5>
+          <!-- Botón para cerrar el modal -->
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <!-- Cuerpo del modal -->
+        <div class="modal-body text-center">
+          <!-- Logo de la plataforma -->
+          <img src="imagenes/LOGO SERVITECH BLANCO.svg" alt="Logo Servitech" style="width: 220px; margin-bottom: 20px;">
+          <!-- Subtítulo del modal -->
+          <h5 class="text-warning fw-bold">Crea tu cuenta</h5>
+          <!-- Formulario de registro -->
+          <section class="form-register">
+            <!-- Instrucción para el usuario -->
+            <h5>Ingresa tus datos</h5>
+            <!-- Campo para ingresar el nombre -->
+            <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+            <!-- Campo para ingresar el apellido -->
+            <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
+            <!-- Campo para ingresar el correo electrónico -->
+            <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+            <!-- Campo para ingresar la contraseña -->
+            <input class="controls" type="password" name="contraseña" id="contraseña" placeholder="Ingrese su Contraseña">
+            <!-- Términos y condiciones -->
+            <p>Estoy de acuerdo con <a href="#">Términos y Condiciones</a></p>
+            <!-- Botón para enviar el formulario -->
+            <input class="botons" type="submit" value="Registrar">
+            <!-- Enlace para cambiar al modal de inicio de sesión -->
+            <p><a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">¿Ya tienes una
+                cuenta?</a></p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección informativa -->
+  <!-- Explica los beneficios de registrarse en la plataforma -->
+  <!-- Incluye un título principal, un subtítulo y dos columnas con información adicional -->
+  <section class="baner-info-texto text-white py-5" style="background: url('imagenes/imagen fondo azul redes.svg') no-repeat center center/cover;">
+    <div class="container text-center">
+      <h1 class="display-4 fw-bold">
+        <span class="text-warning">Regístrate <span class="text-white">gratis</span> para aprender con nuestros expertos en informática</span>
+      </h1>
+      <div class="container text-center">
+        <p class="display-4 fw-bold text-center">
+          <strong>Realiza asesorías y empieza a <span class="text-warning">ganar</span> dinero tú decides cuánto y cuándo.</strong>
+        </p>
+      </div>
+      | 
+      <div class="row mt-4">
+        <div class="col-md-6">
+          <p class="text-center">
+            Encuentra profesionales de informática que te ayuden de forma personalizada y totalmente privada.
+          </p>
+        </div>
+        <div class="col-md-6">
+          <p class="text-center">
+            Como experto, ofrece tus conocimientos en distintas áreas por videollamada y gana dinero enseñando.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de tarjetas -->
+  <!-- Muestra las áreas de especialización disponibles en la plataforma -->
+  <!-- Cada tarjeta representa un área como Frontend, Backend, Frameworks, etc. -->
+  <section class="cards-section py-5">
+    <div class="container">
+      <div class="row text-center">
+        <div class="col-md-3">
+          <div class="card p-3">
+            <h5 class="fw-bold">Desarrollo Frontend</h5>
+            <ul class="list-unstyled">
+              <li>Lenguajes básicos</li>
+              <li>Frameworks y librerías</li>
+              <li>Diseño responsivo</li>
+              <li>Consumo de APIs</li>
+              <li>Control de estado</li>
+              <li>Herramientas de desarrollo</li>
+              <li>y más.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card p-3">
+            <h5 class="fw-bold">Lenguajes de programación</h5>
+            <ul class="list-unstyled">
+              <li>Python</li>
+              <li>JavaScript</li>
+              <li>Java</li>
+              <li>C++</li>
+              <li>PHP</li>
+              <li>Ruby</li>
+              <li>C#</li>
+              <li>y más.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card p-3">
+            <h5 class="fw-bold">Frameworks</h5>
+            <ul class="list-unstyled">
+              <li>React</li>
+              <li>Angular</li>
+              <li>Vue.js</li>
+              <li>Tailwind CSS</li>
+              <li>Django</li>
+              <li>Next.js</li>
+              <li>Flask</li>
+              <li>Spring</li>
+              <li>y más.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="card p-3">
+            <h5 class="fw-bold">Desarrollo Backend</h5>
+            <ul class="list-unstyled">
+              <li>Seguridad</li>
+              <li>Lenguajes de backend</li>
+              <li>Bases de datos</li>
+              <li>APIs y servicios web</li>
+              <li>Servidores y despliegue</li>
+              <li>Arquitectura de software</li>
+              <li>y más.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Asesorías privadas 1 a 1 -->
+  <!-- Destaca las características principales de las asesorías privadas -->
+  <!-- Incluye tarjetas con íconos y descripciones de las características -->
+  <section class="features-section py-5">
+    <div class="container text-center">
+      <img src="imagenes/LOGO SERVITECH BLANCO.svg" alt="Logo Servitech" class="mb-4" style="width: 220px" />
+      <h2 class="text-warning fw-bold">- Asesorías privadas 1 a 1 -</h2>
+      <p class="text-white mb-5">Plataforma de aprendizaje digital</p>
+
+      <div class="row g-4">
+        <!-- Tarjeta 1 -->
+        <div class="col-md-6 col-lg-6">
+          <div class="card h-100 p-4 text-center">
+            <img src="imagenes/icono-videollamadas.png" alt="Soporte 24/7" class="mb-3 rounded-icon" />
+            <h5 class="fw-bold">Videollamadas privadas</h5>
+            <p>
+              Reúnete con tu asesor personal en la plataforma que más te guste
+              como Meet o Teams.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 2 -->
+        <div class="col-md-6 col-lg-6">
+          <div class="card h-100 p-4 text-center">
+            <img src="imagenes/icono-soporte.png" alt="Soporte 24/7" class="mb-3 rounded-icon" />
+            <h5 class="fw-bold">Soporte 24/7</h5>
+            <p>
+              Si tienes cualquier problema o duda, te damos soporte todos los
+              días de la semana.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 3 -->
+        <div class="col-md-6 col-lg-6">
+          <div class="card h-100 p-4 text-center">
+            <img src="imagenes/icono-pagosSeguros.png" alt="Pagos seguros" class="mb-3 rounded-icon" />
+            <h5 class="fw-bold">Pagos seguros</h5>
+            <p>
+              Todos los pagos se hacen por pasarelas seguras dentro de nuestra
+              plataforma.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tarjeta 4 -->
+        <div class="col-md-6 col-lg-6">
+          <div class="card h-100 p-4 text-center">
+            <img src="imagenes/icono-formacionCalidad.png" alt="Formación de calidad" class="mb-3 rounded-icon" />
+            <h5 class="fw-bold">Formación de calidad</h5>
+            <p>
+              Nuestros expertos son valorados por los usuarios, garantizando
+              asesorías de calidad.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección de footer -->
+  <!-- Contiene el pie de página con enlaces rápidos, redes sociales y una breve descripción de la plataforma -->
+  <footer class="footer bg-dark text-white py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Logo y descripción -->
+        <div class="col-md-4 mb-4 text-center">
+          <img src="imagenes/LOGO SERVITECH BLANCO.svg" alt="Logo Servitech" style="width: 180px"
+            class="mb-3 footer-logo" />
+          <p class="text-center">
+            Plataforma de aprendizaje digital que conecta expertos con
+            personas interesadas en aprender y mejorar sus habilidades.
+          </p>
+        </div>
+        <!-- Enlaces rápidos -->
+        <div class="col-md-4 mb-4 text-center text-md-start">
+          <h5 class="text-uppercase">Enlaces rápidos</h5>
+          <ul class="list-unstyled">
+            <li>
+              <a href="index.html" class="text-white text-decoration-none">Inicio</a>
+            </li>
+            <li>
+              <a href="expertos.html" class="text-white text-decoration-none">Expertos</a>
+            </li>
+            <li>
+              <a href="contacto.html" class="text-white text-decoration-none">Contacto</a>
+            </li>
+          </ul>
+        </div>
+        <!-- Redes sociales -->
+        <div class="col-md-4 mb-4 text-center text-md-start">
+          <h5 class="text-uppercase">Síguenos</h5>
+          <div class="d-flex justify-content-center justify-content-md-start gap-3">
+            <a href="#" class="text-white"><i class="bi bi-facebook" style="font-size: 1.5rem"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-twitter" style="font-size: 1.5rem"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-instagram" style="font-size: 1.5rem"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-linkedin" style="font-size: 1.5rem"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <p class="mb-0 text-center">
+          &copy; 2025 SERVITECH. Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Incluye los scripts necesarios para el funcionamiento de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
+  <br />
+</body>
+
+</html>
