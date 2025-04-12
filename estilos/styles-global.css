@@ -1,0 +1,591 @@
+/* ============================
+   Variables globales
+   ============================
+   Definición de colores, fuentes, tamaños y pesos reutilizables en todo el archivo.
+*/
+/* Variables globales */
+:root {
+    --azul-claro: #00bfff;
+    --azul-oscuro: #000943;
+    --amarillo: #e7c400;
+    --negro: #090a10;
+    --blanco: #ffffff;
+
+    /* Fuentes */
+    --fuente-titulo: "Inter", sans-serif;
+    --fuente-titulo-grande: "Miriam Libre", sans-serif;
+    --fuente-subtitulo: "Montserrat", sans-serif;
+    --fuente-texto-regular: "Montserrat", sans-serif;
+    --fuente-texto-descriptivo: "Montserrat", sans-serif;
+
+    /* Tamaños */
+    --tam-titulo: 1.938em;
+    --tam-titulo-grande: 2.438em;
+    --tam-subtitulo: 1.563em;
+    --tam-texto-regular: 1.25em;
+    --tam-texto-descriptivo: 1em;
+
+    /* Pesos */
+    --peso-titulo-grande: 700;
+    --peso-titulo: 500;
+    --peso-subtitulo: 500;
+    --peso-texto-regular: 400;
+    --peso-texto-descriptivo: 400;
+}
+
+/* ============================
+   Estilo de la barra de navegación
+   ============================
+*/
+
+header {
+    background-color: var(--negro); /* Fondo negro */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para destacar el header */
+}
+
+.navbar {
+    background-color: var(--negro); /* Fondo negro */
+    padding: 10px 20px; /* Espaciado interno */
+    align-items: center; /* Alinear los elementos verticalmente */
+}
+
+.navbar-brand {
+    font-size: var(--tam-titulo);
+    font-weight: var(--peso-titulo);
+    color: var(--amarillo); /* Color amarillo para el texto del logo */
+    font-family: var(--fuente-titulo);
+    text-transform: uppercase;
+}
+
+.navbar-brand img {
+    margin-right: 50px; /* Espaciado entre el logo y el texto */
+    width: 300px; /* Aumentar el tamaño del logo */
+    height: auto;
+}
+
+.nav-link {
+    color: var(--blanco); /* Color blanco para los enlaces */
+    font-size: var(--tam-texto-regular);
+    font-weight: var(--peso-texto-regular);
+    font-family: var(--fuente-texto-regular);
+    margin-right: 15px; /* Espaciado entre enlaces */
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: var(--amarillo); /* Color amarillo al pasar el cursor */
+}
+
+/* Estilo para el botón del menú hamburguesa */
+.navbar-toggler {
+    border: none; /* Eliminar el borde del botón */
+    background: transparent; /* Fondo transparente */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    /* Icono de tres líneas horizontales en blanco */
+    background-size: contain; /* Ajustar el tamaño del icono */
+    background-repeat: no-repeat; /* Evitar repeticiones */
+}
+
+.collapse.navbar-collapse {
+    text-align: center;
+}
+
+.navbar-nav .nav-link {
+    margin: 5px 0; /* Espaciado entre enlaces en dispositivos pequeños */
+}
+
+@media (min-width: 992px) {
+    .navbar-nav .nav-link {
+        margin: 0 15px; /* Espaciado horizontal en pantallas grandes */
+    }
+}
+
+.form-control {
+    border-radius: 20px; /* Bordes redondeados para el campo de búsqueda */
+    width: 200px; /* Ajustar ancho */
+    font-family: var(--fuente-texto-regular);
+    font-size: var(--tam-texto-descriptivo);
+}
+
+.btn-outline-success {
+    color: var(--amarillo); /* Botón con borde amarillo */
+    border-color: var(--amarillo);
+    font-weight: var(--peso-texto-regular);
+    font-family: var(--fuente-texto-regular);
+}
+
+.btn-outline-success:hover {
+    background-color: var(--amarillo); /* Fondo amarillo al pasar el cursor */
+    border-color: var(--amarillo);
+    color: var(--negro); /* Texto negro */
+}
+
+.btn-warning {
+    color: var(--negro); /* Texto negro */
+    background-color: var(--amarillo); /* Fondo amarillo */
+    font-family: var(--fuente-texto-regular);
+    font-weight: var(--peso-texto-regular);
+}
+
+.btn-warning:hover {
+    background-color: var(--blanco); /* Fondo blanco al pasar el cursor */
+    color: var(--negro); /* Texto negro */
+}
+
+/* ============================
+   Estilo del contenido del header
+   ============================
+   Estilos para el contenido principal del encabezado.
+*/
+/* Estilo del contenido del header */
+.header-content {
+    background: url('../imagenes/header-background.jpg') no-repeat center center/cover;
+    padding: 100px 20px;
+}
+
+.header-content h1 {
+    font-family: var(--fuente-titulo-grande);
+    font-size: var(--tam-titulo-grande);
+    font-weight: var(--peso-titulo-grande);
+    margin-bottom: 20px;
+}
+
+.header-content p {
+    font-family: var(--fuente-texto-regular);
+    font-size: var(--tam-texto-regular);
+    font-weight: var(--peso-texto-regular);
+    margin-bottom: 30px;
+}
+
+.header-content .btn-warning {
+    background-color: var(--bg-cta-btn);
+    color: var(--color-cta-btn);
+    border: 2px solid var(--b-cta-btn);
+    border-radius: var(--br-cta-btn);
+    padding: var(--p-cta-btn);
+    font-family: var(--ff-cta-btn);
+    font-size: var(--fs-cta-btn);
+    font-weight: var(--fw-cta-btn);
+    cursor: var(--cursor-cta-btn);
+}
+
+.header-content .btn-warning:hover {
+    background-color: var(--azul-claro);
+    color: var(--blanco);
+}
+
+/* ============================
+   Estilo para la nueva sección de texto
+   ============================
+   Estilos para los párrafos dentro de contenedores.
+*/
+/* Estilo para la nueva sección de texto */
+.container p {
+    font-family: var(--fuente-texto-regular);
+    font-size: var(--tam-texto-regular);
+    font-weight: var(--peso-texto-regular);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.info-section {
+    background-color: var(--negro); /* Fondo negro */
+    padding: 60px 20px;
+}
+
+.info-section h1 {
+    font-family: var(--fuente-titulo-grande);
+    font-size: var(--tam-titulo-grande);
+    font-weight: var(--peso-titulo-grande);
+    color: var(--amarillo); /* Color amarillo para el título */
+    margin-bottom: 20px;
+}
+
+.info-section p.lead {
+    font-family: var(--fuente-texto-regular);
+    font-size: var(--tam-subtitulo);
+    font-weight: var(--peso-subtitulo);
+    color: var(--blanco); /* Color blanco para el texto principal */
+    margin-bottom: 40px;
+}
+
+.info-section p {
+    font-family: var(--fuente-texto-regular);
+    font-size: calc(var(--tam-texto-regular) * 0.8); /* Reducir tamaño en un 20% */
+    font-weight: var(--peso-texto-regular);
+    line-height: 1.6;
+    text-align: justify;
+    color: var(--blanco); /* Color blanco para los párrafos */
+}
+
+/* ============================
+   Estilo para la sección de registro
+   ============================
+   Estilos para el formulario de registro en el modal.
+*/
+/* Estilo para la sección de registro */
+.form-register {
+    width: 400px;
+    background: var(--gris); /* Fondo gris oscuro */
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10px; /* Bordes más redondeados */
+    font-family: 'calibri';
+    color: var(--blanco); /* Texto blanco */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra más suave */
+}
+
+.form-register h5 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: var(--amarillo); /* Títulos en amarillo */
+}
+
+.controls {
+    width: 100%;
+    background: var(--grisClaro); /* Fondo gris claro */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    border: 1px solid var(--amarillo); /* Borde azul claro */
+    font-family: 'calibri';
+    font-size: 18px;
+    color: var(--blanco); /* Texto blanco */
+}
+
+.form-register p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    color: var(--blanco); /* Texto blanco */
+}
+
+.form-register a {
+    color: var(--azul-claro); /* Enlaces en azul claro */
+    text-decoration: none;
+}
+
+.form-register a:hover {
+    color: var(--amarillo); /* Enlaces en amarillo al pasar el cursor */
+    text-decoration: underline;
+}
+
+.form-register .botons {
+    width: 100%;
+    background: var(--amarillo); /* Fondo amarillo */
+    border: none;
+    padding: 12px;
+    color: var(--negro); /* Texto negro */
+    margin: 16px 0;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-register .botons:hover {
+    background: var(--blanco); /* Fondo azul claro al pasar el cursor */
+    color: var(--negro); /* Texto blanco */
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+/* ============================
+   Estilo sección de tarjetas
+   ============================
+   Estilos para las tarjetas de contenido.
+*/
+/* Estilo para las tarjetas de contenido */
+.cards-section {
+    background-color: var(--negro); /* Fondo negro */
+    padding: 40px 20px; /* Reducir el padding */
+}
+
+.cards-section .card {
+    background-color: #ffffff; /* Fondo blanco para las tarjetas */
+    border: 1px solid var(--amarillo); /* Borde amarillo sólido */
+    border-radius: 8px; /* Bordes más redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra más ligera */
+    color: var(--negro); /* Texto negro */
+    padding: 15px; /* Reducir el padding interno */
+    margin-bottom: 20px; /* Espaciado entre tarjetas */
+    text-align: center; /* Centrar el contenido */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Asegurar que todas las tarjetas tengan la misma altura */
+}
+
+.cards-section .card h5 {
+    font-family: var(--fuente-titulo);
+    font-size: calc(var(--tam-subtitulo) * 0.9); /* Reducir tamaño del título */
+    font-weight: var(--peso-titulo);
+    margin-bottom: 10px; /* Reducir margen inferior */
+}
+
+.cards-section .card ul {
+    font-family: var(--fuente-texto-regular);
+    font-size: calc(var(--tam-texto-regular) * 0.9); /* Reducir tamaño del texto */
+    font-weight: var(--peso-texto-regular);
+    line-height: 1.4; /* Reducir el interlineado */
+    text-align: center; /* Centrar el texto */
+    padding: 0;
+    list-style: none;
+    margin: 0; /* Eliminar márgenes */
+}
+
+.cards-section .row {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que las tarjetas se envuelvan en pantallas pequeñas */
+    justify-content: center; /* Centrar las tarjetas */
+    gap: 20px; /* Espaciado uniforme entre tarjetas */
+}
+
+.cards-section .col-md-3 {
+    flex: 1 1 calc(25% - 20px); /* Ocupan el 25% del ancho con espacio entre ellas */
+    max-width: calc(25% - 20px); /* Máximo ancho del 25% */
+}
+
+/* Fondo redondo del ícono */
+.rounded-icon {
+    width: 90px;
+    height: 90px;
+    background-color: #e7c400;
+    border-radius: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagen del ícono */
+.rounded-icon img {
+    width: 45px;   /* Tamaño exacto que se ve bien sin tocar bordes */
+    height: 45px;
+    object-fit: contain;
+}
+
+/* Ajustes generales para transiciones suaves entre pantallas */
+.container {
+    max-width: 1200px; /* Limitar el ancho máximo del contenedor */
+    padding: 0 15px; /* Espaciado interno para evitar desbordamientos */
+}
+
+.row {
+    margin: 0 -10px; /* Reducir márgenes negativos para evitar saltos */
+}
+
+.col-md-3, .col-md-6, .col-lg-6 {
+    padding: 10px; /* Espaciado interno uniforme entre columnas */
+}
+
+@media (max-width: 992px) {
+    .cards-section .col-md-3 {
+        flex: 1 1 calc(50% - 20px); /* Ocupan el 50% del ancho en pantallas medianas */
+        max-width: calc(50% - 20px);
+    }
+    .features-section .col-md-6 {
+        flex: 1 1 calc(50% - 20px); /* Ocupan el 50% del ancho */
+        max-width: calc(50% - 20px); /* Máximo ancho del 50% */
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-section .col-md-3 {
+        flex: 1 1 calc(100% - 20px); /* Ocupan el 100% del ancho en pantallas pequeñas */
+        max-width: calc(100% - 20px);
+    }
+    .features-section .col-md-6 {
+        flex: 1 1 calc(100% - 20px); /* Ocupan el 100% del ancho */
+        max-width: calc(100% - 20px); /* Máximo ancho del 100% */
+    }
+
+    .navbar-brand img {
+        width: 120px; /* Reducir el tamaño del logo en pantallas pequeñas */
+    }
+
+    .btn-outline-success, .btn-warning {
+        font-size: 0.9rem; /* Reducir el tamaño de los botones */
+        padding: 8px 12px; /* Ajustar el espaciado interno */
+    }
+}
+
+@media (max-width: 576px) {
+    .cards-section .col-md-3 {
+        flex: 1 1 100%; /* Ocupan el 100% del ancho en pantallas pequeñas */
+        max-width: 100%;
+    }
+    .features-section .col-md-6 {
+        flex: 1 1 100%; /* Ocupan el 100% del ancho */
+        max-width: 100%; /* Máximo ancho del 100% */
+    }
+
+    .info-section h1 {
+        font-size: 1.5rem; /* Reducir el tamaño del título */
+    }
+
+    .info-section p {
+        font-size: 1rem; /* Reducir el tamaño del texto */
+    }
+
+    .navbar-brand img {
+        width: 100px; /* Reducir aún más el tamaño del logo */
+    }
+}
+
+/* Transiciones suaves */
+.card, .navbar, .btn {
+    transition: all 0.3s ease-in-out; /* Transición suave para cambios */
+}
+
+/* ============================
+   Estilo sección de asesorías privadas
+   ============================
+   Estilos para la sección de asesorías privadas 1 a 1.
+*/
+/* Fondo principal de la sección */
+.features-section {
+    background-color: #0c0c0c; /* Negro suave */
+    color: white;
+    padding: 60px 0;
+}
+
+/* Títulos */
+.features-section h2 {
+    font-family: var(--fuente-titulo-grande);
+    font-size: var(--tam-titulo-grande);
+    font-weight: var(--peso-titulo-grande);
+    color: var(--amarillo); /* Color amarillo */
+    margin-bottom: 15px; /* Espaciado entre el título y el párrafo */
+    text-align: center; /* Centrar el texto */
+}
+
+.features-section p {
+    font-family: var(--fuente-texto-regular);
+    font-size: var(--tam-texto-regular);
+    font-weight: var(--peso-texto-regular);
+    color: var(--blanco); /* Color blanco */
+    margin-bottom: 40px; /* Espaciado debajo del párrafo */
+    text-align: center; /* Centrar el texto */
+}
+
+/* Tarjetas */
+.features-section .card {
+    background-color: #ffffff; /* Fondo blanco */
+    border: 2px solid var(--amarillo); /* Borde amarillo */
+    border-radius: 16px; /* Bordes redondeados */
+    padding: 25px;
+    color: #000000; /* Texto negro */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+}
+
+.features-section .card h5,
+.features-section .card p {
+    color: #000000; /* Texto negro */
+}
+
+/* Efecto hover en tarjetas */
+.features-section .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+/* Iconos dentro de las tarjetas */
+.features-section .card img {
+    width: 50px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.features-section .card img.rounded-icon {
+    display: block; /* Convertir en bloque */
+    margin: 0 auto 15px; /* Centrar horizontalmente y añadir margen inferior */
+}
+
+/* Texto de títulos en tarjetas */
+.features-section .card h5 {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Asegurar espaciado entre tarjetas en móvil */
+@media (max-width: 767px) {
+    .features-section .card {
+        margin-bottom: 20px;
+    }
+}
+
+/* ============================
+   Estilo del footer
+   ============================
+   Estilos para el pie de página.
+*/
+/* Estilo sección de footer */
+.footer {
+    background-color: var(--negro); /* Fondo negro */
+    color: var(--blanco); /* Texto blanco */
+    padding: 40px 0;
+}
+
+.footer h5 {
+    font-family: var(--fuente-titulo);
+    font-size: var(--tam-subtitulo);
+    font-weight: var(--peso-titulo);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+.footer p {
+    font-family: var(--fuente-texto-regular);
+    font-size: var(--tam-texto-descriptivo);
+    margin: 0;
+    line-height: 1.6;
+    text-align: center; /* Centrar el texto del copyright */
+}
+
+.footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer ul li a {
+    color: var(--blanco); /* Enlaces blancos */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer ul li a:hover {
+    color: var(--amarillo); /* Cambiar a amarillo al pasar el cursor */
+}
+
+.footer .bi {
+    font-size: 1.5rem; /* Tamaño de los íconos */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .bi:hover {
+    color: var(--amarillo); /* Cambiar a amarillo al pasar el cursor */
+    transform: scale(1.2); /* Aumentar tamaño al pasar el cursor */
+}
+
+.footer .d-flex {
+    gap: 15px; /* Espaciado entre íconos */
+    justify-content: center; /* Centrar íconos en pantallas pequeñas */
+}
+
+.footer-logo {
+    width: 180px; /* Aumentar el tamaño del logo un 20% */
+    height: auto;
+}
+

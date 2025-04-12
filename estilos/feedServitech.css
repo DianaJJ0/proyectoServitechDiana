@@ -1,0 +1,232 @@
+/* ============================
+   Estilo para la nueva sección de texto
+   ============================
+   Estilos para los textos descriptivos en el contenido principal.
+*/
+/* Estilo para la nueva sección de texto */
+/* Estilos para los textos descriptivos en el contenido principal */
+.container p {
+    font-family: var(--fuente-texto-regular);
+    font-size: var(--tam-texto-regular);
+    font-weight: var(--peso-texto-regular);
+    line-height: 1.6;
+    text-align: justify;
+}
+
+.info-section {
+    background-color: var(--negro); /* Fondo negro */
+    padding: 60px 20px;
+}
+
+.info-section h1 {
+    font-family: var(--fuente-titulo-grande);
+    font-size: var(--tam-titulo-grande);
+    font-weight: var(--peso-titulo-grande);
+    color: var(--amarillo); /* Color amarillo para el título */
+    margin-bottom: 20px;
+}
+
+.info-section p.lead {
+    font-family: var(--fuente-texto-regular);
+    font-size: var(--tam-subtitulo);
+    font-weight: var(--peso-subtitulo);
+    color: var(--blanco); /* Color blanco para el texto principal */
+    margin-bottom: 40px;
+}
+
+.info-section p {
+    font-family: var(--fuente-texto-regular);
+    font-size: calc(var(--tam-texto-regular) * 0.8); /* Reducir tamaño en un 20% */
+    font-weight: var(--peso-texto-regular);
+    line-height: 1.6;
+    text-align: justify;
+    color: var(--blanco); /* Color blanco para los párrafos */
+}
+
+/* ============================
+   Estilo para la sección de registro
+   ============================
+   Estilos para el formulario de registro.
+*/
+/* Estilo para la sección de registro */
+/* Estilos para el formulario de registro */
+.form-register {
+    width: 400px;
+    background: var(--gris); /* Fondo gris oscuro */
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10px; /* Bordes más redondeados */
+    font-family: 'calibri';
+    color: var(--blanco); /* Texto blanco */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra más suave */
+}
+
+.form-register h5 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: var(--amarillo); /* Títulos en amarillo */
+}
+
+.controls {
+    width: 100%;
+    background: var(--grisClaro); /* Fondo gris claro */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    border: 1px solid var(--amarillo); /* Borde azul claro */
+    font-family: 'calibri';
+    font-size: 18px;
+    color: var(--blanco); /* Texto blanco */
+}
+
+.form-register p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    color: var(--blanco); /* Texto blanco */
+}
+
+.form-register a {
+    color: var(--azul-claro); /* Enlaces en azul claro */
+    text-decoration: none;
+}
+
+.form-register a:hover {
+    color: var(--amarillo); /* Enlaces en amarillo al pasar el cursor */
+    text-decoration: underline;
+}
+
+.form-register .botons {
+    width: 100%;
+    background: var(--amarillo); /* Fondo amarillo */
+    border: none;
+    padding: 12px;
+    color: var(--negro); /* Texto negro */
+    margin: 16px 0;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-register .botons:hover {
+    background: var(--blanco); /* Fondo azul claro al pasar el cursor */
+    color: var(--negro); /* Texto blanco */
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+
+
+/* Estilo adicional para el diseño proporcionado */
+/* Estilos generales para el diseño de la página */
+body {
+    background-color: var(--negro);
+    color: var(--blanco);
+    font-family: var(--fuente-texto-regular);
+}
+
+aside {
+    height: 100vh;
+    overflow-y: auto;
+}
+
+aside h5, aside h6 {
+    color: var(--amarillo);
+}
+
+aside a {
+    color: var(--blanco);
+    text-decoration: none;
+}
+
+aside a:hover {
+    color: var(--amarillo);
+}
+
+.post {
+    border: 1px solid var(--grisClaro);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.post h6 {
+    color: var(--amarillo);
+}
+
+.post button {
+    margin-right: 5px;
+}
+
+textarea, input, select {
+    background-color: var(--gris);
+    color: var(--blanco);
+    border: 1px solid var(--grisClaro);
+}
+
+textarea::placeholder, input::placeholder {
+    color: var(--grisClaro);
+}
+
+button.btn-warning {
+    background-color: var(--amarillo);
+    color: var(--negro);
+    border: none;
+}
+
+button.btn-warning:hover {
+    background-color: var(--blanco); /* Fondo blanco al pasar el cursor */
+    color: var(--negro); /* Texto negro */
+    border: 1px solid var(--amarillo); /* Borde amarillo */
+}
+
+/* Estilo para el scroll y los íconos en el sidebar */
+.accordion-body {
+    max-height: 150px; /* Altura máxima para el contenido */
+    overflow-y: auto; /* Habilitar scroll vertical */
+}
+
+.accordion-button i {
+    font-size: 1.2rem; /* Tamaño del ícono */
+    color: var(--amarillo); /* Color del ícono */
+}
+
+.accordion-button.collapsed i {
+    transform: rotate(0deg); /* Rotación inicial */
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+.accordion-button:not(.collapsed) i {
+    transform: rotate(180deg); /* Rotar el ícono al expandir */
+}
+
+input[type="text"], input[type="number"], select {
+    border-radius: 5px; /* Bordes ligeramente redondeados */
+    padding: 10px;
+    font-size: 1rem;
+    border: 2px solid var(--amarillo); /* Borde amarillo */
+    background-color: var(--gris); /* Fondo gris */
+    color: var(--amarillo); /* Texto amarillo */
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+    outline: none; /* Eliminar el borde azul predeterminado */
+    border-color: var(--amarillo); /* Cambiar el color del borde al enfocarse */
+    box-shadow: 0 0 5px var(--amarillo); /* Agregar un efecto de sombra */
+}
+
+select {
+    border: 2px solid var(--amarillo); /* Borde amarillo */
+    color: var(--amarillo); /* Texto amarillo */
+    background-color: var(--gris); /* Fondo gris */
+}
+
+select option {
+    color: var(--negro); /* Texto negro dentro de las opciones */
+    background-color: var(--blanco); /* Fondo blanco para las opciones */
+}
+
+select:focus {
+    outline: none; /* Eliminar el borde azul predeterminado */
+    border-color: var(--amarillo); /* Mantener el borde amarillo */
+    box-shadow: 0 0 5px var(--amarillo); /* Sombra amarilla al enfocarse */
+}

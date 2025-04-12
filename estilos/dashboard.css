@@ -1,0 +1,190 @@
+/* ============================
+   Estilos generales
+   ============================
+   Definición de colores y fuentes globales.
+*/
+:root {
+    --bg-dark: #212529;
+    --text-light: #ffffff;
+    --text-warning: #ffc107;
+    --text-success: #28a745;
+    --text-danger: #dc3545;
+    --card-bg: #f8f9fa;
+    --card-border: #dee2e6;
+    --sidebar-width: 250px;
+    --font-family: "Inter", sans-serif;
+}
+
+/* ============================
+   Estilo del sidebar
+   ============================
+   Estilos para la barra lateral.
+*/
+aside {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    width: var(--sidebar-width);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 20px;
+}
+
+aside h4 {
+    font-family: var(--font-family);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+aside .nav-link {
+    font-family: var(--font-family);
+    font-size: 1rem;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Estilo para el botón activo */
+aside .nav-link.active {
+    background-color: var(--text-warning);
+    color: var(--bg-dark);
+}
+
+/* Estilo para el botón al pasar el mouse */
+aside .nav-link:hover {
+    background-color: var(--text-warning);
+    color: var(--bg-dark);
+}
+
+aside hr {
+    border-color: var(--text-light);
+    margin: 20px 0;
+}
+
+aside a.text-decoration-none {
+    font-family: var(--font-family);
+    font-size: 1rem;
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+aside a.text-decoration-none:hover {
+    color: var(--text-warning);
+}
+
+/* ============================
+   Estilo del contenido principal
+   ============================
+   Estilos para el área principal del panel.
+*/
+main {
+    margin-left: var(--sidebar-width);
+    padding: 20px;
+    background-color: var(--card-bg);
+    min-height: 100vh;
+    font-family: var(--font-family);
+}
+
+main h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--bg-dark);
+}
+
+main .btn-warning {
+    font-family: var(--font-family);
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--bg-dark);
+    background-color: var(--text-warning);
+    border: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+main .btn-warning:hover {
+    background-color: #212529; /* Cambiar a color #212529 al pasar el mouse */
+    color: var(--text-light);
+    transform: scale(1.05);
+}
+
+/* ============================
+   Estilo de las tarjetas
+   ============================
+   Estilos para las tarjetas de estadísticas.
+*/
+.card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--bg-dark);
+}
+
+.card h3 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--bg-dark);
+}
+
+.card p {
+    font-size: 0.9rem;
+    font-weight: normal;
+    margin-top: 10px;
+}
+
+.card p.text-success {
+    color: var(--text-success);
+}
+
+.card p.text-danger {
+    color: var(--text-danger);
+}
+
+/* ============================
+   Estilo de la tabla
+   ============================
+   Estilos para la tabla de asesorías recientes.
+*/
+.table {
+    font-family: var(--font-family);
+    font-size: 0.9rem;
+    color: var(--bg-dark);
+}
+
+.table thead {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+.table tbody tr:hover {
+    background-color: var(--text-warning);
+    color: var(--bg-dark);
+}
+
+.table td, .table th {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table .text-warning {
+    font-weight: bold;
+    color: var(--text-warning);
+}

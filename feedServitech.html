@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Metadatos y enlaces a estilos -->
+  <!-- Incluye los metadatos básicos y los enlaces a Bootstrap, Bootstrap Icons y el archivo CSS personalizado -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>proyecto con bootstrap</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="estilos/styles-global.css" />
+  <link rel="stylesheet" href="estilos/feedServitech.css" />
+  <link rel="stylesheet" href="estilos/expert.css" />
+  <link rel="stylesheet" href="estilos/contact.css" />
+</head>
+
+<body>
+  <!-- Contenedor para cargar el header -->
+  <div id="header-placeholder"></div>
+  <script>
+    // Cargar dinámicamente el contenido del header desde el archivo header.html
+    fetch('componentes/header.html')
+      .then(response => response.text())
+      .then(data => document.getElementById('header-placeholder').innerHTML = data);
+  </script>
+
+
+  <!-- Modal de Inicio de Sesión -->
+  <!-- Modal que permite a los usuarios iniciar sesión -->
+  <!-- Contiene un formulario con campos para correo y contraseña -->
+  <section class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background-color: #212529; border-radius: 10px;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-warning fw-bold" id="loginModalLabel">
+            Iniciar Sesión
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="imagenes/LOGO SERVITECH BLANCO.svg" alt="Logo Servitech" style="width: 220px; margin-bottom: 20px;">
+          <h5 class="text-warning fw-bold">Bienvenido de nuevo</h5>
+          <section class="form-register">
+            <h5>Ingresa usuario</h5>
+            <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+            <input class="controls" type="password" name="contraseña" id="contraseña"
+              placeholder="Ingrese su Contraseña">
+            <p>Estoy de acuerdo con <a href="#">Términos y Condiciones</a></p>
+            <input class="botons" type="submit" value="Iniciar Sesión">
+            <p><a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal">¿Aún no tienes
+                una cuenta?</a></p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal de Registro -->
+  <!-- Modal que permite a los usuarios registrarse -->
+  <!-- Contiene un formulario con campos para nombre, apellido, correo y contraseña -->
+  <div class="modal fade" id="registerModal" tabindex="-1" aria-labelledby="registerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content" style="background-color: #212529; border-radius: 10px;">
+        <div class="modal-header border-0">
+          <h5 class="modal-title text-warning fw-bold" id="registerModalLabel">
+            Registro
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="imagenes/LOGO SERVITECH BLANCO.svg" alt="Logo Servitech" style="width: 220px; margin-bottom: 20px;">
+          <h5 class="text-warning fw-bold">Crea tu cuenta</h5>
+          <section class="form-register">
+            <h5>Ingresa tus datos</h5>
+            <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+            <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
+            <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+            <input class="controls" type="password" name="contraseña" id="contraseña"
+              placeholder="Ingrese su Contraseña">
+            <p>Estoy de acuerdo con <a href="#">Términos y Condiciones</a></p>
+            <input class="botons" type="submit" value="Registrar">
+            <p><a href="#" data-bs-toggle="modal" data-bs-target="#loginModal" data-bs-dismiss="modal">¿Ya tienes una
+                cuenta?</a></p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Sección principal con barra lateral y contenido -->
+  <!-- Contiene una barra lateral con filtros y un área principal para buscar expertos y realizar publicaciones -->
+  <!-- La barra lateral incluye filtros por especialización, disponibilidad y puntuación -->
+  <!-- El área principal permite buscar expertos y crear nuevas publicaciones -->
+  <section class="container-fluid">
+    <div class="row">
+      <!-- Sidebar -->
+      <aside class="col-md-3 bg-dark text-white p-3">
+        <div class="mb-4">
+          <button class="btn btn-dark w-100 text-start d-flex align-items-center mb-2"
+            onclick="location.href='index.html'">
+            <i class="bi bi-house-door me-2"></i> Principal
+          </button>
+          <button class="btn btn-secondary w-100 text-start d-flex align-items-center">
+            <i class="bi bi-star me-2"></i> Expertos verificados
+          </button>
+        </div>
+        <hr class="text-white" />
+        <h5 class="fw-bold">Filtro</h5>
+        <div class="accordion" id="filterAccordion">
+          <!-- Filtro: Desarrollo Frontend -->
+          <div class="accordion-item">
+            <h6 class="accordion-header">
+              <button class="accordion-button collapsed bg-dark text-white d-flex align-items-center" type="button"
+                data-bs-toggle="collapse" data-bs-target="#frontendFilter" aria-expanded="false">
+                <i class="bi bi-laptop me-2"></i> Desarrollo Frontend
+              </button>
+            </h6>
+            <div id="frontendFilter" class="accordion-collapse collapse">
+              <div class="accordion-body" style="max-height: 150px; overflow-y: auto;">
+                <ul class="list-unstyled">
+                  <li>Lenguajes básicos</li>
+                  <li>Frameworks y librerías</li>
+                  <li>Diseño responsivo</li>
+                  <li>Consumo de APIs</li>
+                  <li>Control de estado</li>
+                  <li>Herramientas de desarrollo</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Filtro: Lenguajes de programación -->
+          <div class="accordion-item">
+            <h6 class="accordion-header">
+              <button class="accordion-button collapsed bg-dark text-white d-flex align-items-center" type="button"
+                data-bs-toggle="collapse" data-bs-target="#programmingFilter" aria-expanded="false">
+                <i class="bi bi-code-slash me-2"></i> Lenguajes de programación
+              </button>
+            </h6>
+            <div id="programmingFilter" class="accordion-collapse collapse">
+              <div class="accordion-body" style="max-height: 150px; overflow-y: auto;">
+                <ul class="list-unstyled">
+                  <li>Python</li>
+                  <li>JavaScript</li>
+                  <li>Java</li>
+                  <li>C++</li>
+                  <li>PHP</li>
+                  <li>Ruby</li>
+                  <li>C#</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Filtro: Desarrollo Backend -->
+          <div class="accordion-item">
+            <h6 class="accordion-header">
+              <button class="accordion-button collapsed bg-dark text-white d-flex align-items-center" type="button"
+                data-bs-toggle="collapse" data-bs-target="#backendFilter" aria-expanded="false">
+                <i class="bi bi-server me-2"></i> Desarrollo Backend
+              </button>
+            </h6>
+            <div id="backendFilter" class="accordion-collapse collapse">
+              <div class="accordion-body" style="max-height: 150px; overflow-y: auto;">
+                <ul class="list-unstyled">
+                  <li>Seguridad</li>
+                  <li>Lenguajes de backend</li>
+                  <li>Bases de datos</li>
+                  <li>APIs y servicios web</li>
+                  <li>Servidores y despliegue</li>
+                  <li>Arquitectura de software</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <!-- Filtro: Frameworks -->
+          <div class="accordion-item">
+            <h6 class="accordion-header">
+              <button class="accordion-button collapsed bg-dark text-white d-flex align-items-center" type="button"
+                data-bs-toggle="collapse" data-bs-target="#frameworksFilter" aria-expanded="false">
+                <i class="bi bi-box me-2"></i> Frameworks
+              </button>
+            </h6>
+            <div id="frameworksFilter" class="accordion-collapse collapse">
+              <div class="accordion-body" style="max-height: 150px; overflow-y: auto;">
+                <ul class="list-unstyled">
+                  <li>React</li>
+                  <li>Angular</li>
+                  <li>Vue.js</li>
+                  <li>Tailwind CSS</li>
+                  <li>Django</li>
+                  <li>Next.js</li>
+                  <li>Flask</li>
+                  <li>Spring</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr />
+        <h6 class="fw-bold">Recursos</h6>
+        <ul class="list-unstyled">
+          <li class="d-flex align-items-center mb-2">
+            <i class="bi bi-question-circle me-2 text-warning"></i>
+            <a href="#" class="text-white text-decoration-none">Ayuda</a>
+          </li>
+          <li class="d-flex align-items-center mb-2">
+            <i class="bi bi-info-circle me-2 text-warning"></i>
+            <a href="#" class="text-white text-decoration-none">Acerca de SERVITECH</a>
+          </li>
+          <hr class="text-white" />
+          <li class="d-flex align-items-center mb-2">
+            <i class="bi bi-file-earmark-text me-2 text-warning"></i>
+            <a href="#" class="text-white text-decoration-none">Política de contenido</a>
+          </li>
+          <li class="d-flex align-items-center mb-2">
+            <i class="bi bi-shield-lock me-2 text-warning"></i>
+            <a href="#" class="text-white text-decoration-none">Política de privacidad</a>
+          </li>
+          <li class="d-flex align-items-center">
+            <i class="bi bi-people me-2 text-warning"></i>
+            <a href="#" class="text-white text-decoration-none">Acuerdo del usuario</a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Main Contenido -->
+      <main class="col-md-9 p-4">
+        <h3 class="text-warning fw-bold text-center mb-4">Encuentra tu Experto</h3>
+        <form class="p-4 bg-dark text-white rounded shadow-sm">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="searchExpert" class="form-label"><i class="bi bi-search"></i> Nombre o especialización</label>
+              <input type="text" id="searchExpert" class="form-control w-100" placeholder="Ej. Desarrollo Frontend" />
+            </div>
+            <div class="col-md-6">
+              <label for="hourlyRate" class="form-label"><i class="bi bi-currency-dollar"></i> Precio por hora</label>
+              <input type="number" id="hourlyRate" class="form-control w-100" placeholder="Ej. 20" />
+            </div>
+            <div class="col-md-6">
+              <label for="availability" class="form-label"><i class="bi bi-calendar-event"></i> Disponibilidad</label>
+              <select id="availability" class="form-select">
+                <option selected>Selecciona...</option>
+                <option value="1">Diurna</option>
+                <option value="2">Nocturna</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="rating" class="form-label"><i class="bi bi-star"></i> Puntuación mínima</label>
+              <select id="rating" class="form-select">
+                <option selected>Selecciona...</option>
+                <option value="1">1 estrella</option>
+                <option value="2">2 estrellas</option>
+                <option value="3">3 estrellas</option>
+                <option value="4">4 estrellas</option>
+                <option value="5">5 estrellas</option>
+              </select>
+            </div>
+          </div>
+          <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary w-50">Buscar</button>
+          </div>
+        </form>
+
+        <h5 class="text-warning fw-bold text-center mt-5">Nueva publicación</h5>
+        <form class="p-4 bg-dark text-white rounded shadow-sm">
+          <div class="mb-3">
+            <label for="postDetails" class="form-label"><i class="bi bi-pencil-square"></i> Detalles de tu
+              solicitud</label>
+            <textarea id="postDetails" class="form-control w-100" rows="4"
+              placeholder="Describe tu solicitud..."></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="postTopic" class="form-label"><i class="bi bi-tags"></i> Tema</label>
+            <select id="postTopic" class="form-select">
+              <option selected>Selecciona un tema...</option>
+              <option value="1">Desarrollo Frontend</option>
+              <option value="2">Lenguajes de programación</option>
+              <option value="3">Desarrollo Backend</option>
+              <option value="4">Frameworks</option>
+            </select>
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-warning w-50">Publicar</button>
+          </div>
+        </form>
+
+        <hr class="my-5" />
+
+        <!-- Posts -->
+        <div class="post mb-4 p-3 bg-dark text-white rounded shadow-sm">
+          <h6 class="fw-bold">Usuario123 <span class="text-muted">hace 4 h</span></h6>
+          <p>Busco asesoría sobre JavaScript desde cero. En horas de la noche de preferencia...</p>
+          <div class="d-flex justify-content-between">
+            <div>
+              <button class="btn btn-outline-light btn-sm"><i class="bi bi-hand-thumbs-up"></i> 14</button>
+              <button class="btn btn-outline-light btn-sm"><i class="bi bi-chat"></i> 5</button>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="postOptions"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-three-dots"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="postOptions">
+                <li><a class="dropdown-item" href="#">Editar publicación</a></li>
+                <li><a class="dropdown-item" href="#">Eliminar publicación</a></li>
+                <li><a class="dropdown-item" href="#">Reportar publicación</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="post mb-4 p-3 bg-dark text-white rounded shadow-sm">
+          <h6 class="fw-bold">Usuario456 <span class="text-muted">hace 2 h</span></h6>
+          <p>Necesito ayuda con el diseño responsivo de mi sitio web. Uso Bootstrap...</p>
+          <div class="d-flex justify-content-between">
+            <div>
+              <button class="btn btn-outline-light btn-sm"><i class="bi bi-hand-thumbs-up"></i> 20</button>
+              <button class="btn btn-outline-light btn-sm"><i class="bi bi-chat"></i> 8</button>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="postOptions"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-three-dots"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="postOptions">
+                <li><a class="dropdown-item" href="#">Editar publicación</a></li>
+                <li><a class="dropdown-item" href="#">Eliminar publicación</a></li>
+                <li><a class="dropdown-item" href="#">Reportar publicación</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="post mb-4 p-3 bg-dark text-white rounded shadow-sm">
+          <h6 class="fw-bold">Usuario789 <span class="text-muted">hace 1 día</span></h6>
+          <p>Busco un experto en Python para resolver dudas sobre machine learning...</p>
+          <div class="d-flex justify-content-between">
+            <div>
+              <button class="btn btn-outline-light btn-sm"><i class="bi bi-hand-thumbs-up"></i> 35</button>
+              <button class="btn btn-outline-light btn-sm"><i class="bi bi-chat"></i> 12</button>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="postOptions"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-three-dots"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="postOptions">
+                <li><a class="dropdown-item" href="#">Editar publicación</a></li>
+                <li><a class="dropdown-item" href="#">Eliminar publicación</a></li>
+                <li><a class="dropdown-item" href="#">Reportar publicación</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="post mb-4 p-3 bg-dark text-white rounded shadow-sm">
+          <h6 class="fw-bold">Usuario321 <span class="text-muted">hace 3 días</span></h6>
+          <p>Requiero asesoría para implementar una API REST con Node.js y Express...</p>
+          <div class="d-flex justify-content-between">
+            <div>
+              <button class="btn btn-outline-light btn-sm"><i class="bi bi-hand-thumbs-up"></i> 18</button>
+              <button class="btn btn-outline-light btn-sm"><i class="bi bi-chat"></i> 7</button>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="postOptions"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-three-dots"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="postOptions">
+                <li><a class="dropdown-item" href="#">Editar publicación</a></li>
+                <li><a class="dropdown-item" href="#">Eliminar publicación</a></li>
+                <li><a class="dropdown-item" href="#">Reportar publicación</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="post mb-4 p-3 bg-dark text-white rounded shadow-sm">
+          <h6 class="fw-bold">Usuario654 <span class="text-muted">hace 5 días</span></h6>
+          <p>Quiero aprender a usar React desde cero. ¿Alguien disponible para clases?</p>
+          <div class="d-flex justify-content-between">
+            <div>
+              <button class="btn btn-outline-light btn-sm"><i class="bi bi-hand-thumbs-up"></i> 25</button>
+              <button class="btn btn-outline-light btn-sm"><i class="bi bi-chat"></i> 10</button>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="postOptions"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-three-dots"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="postOptions">
+                <li><a class="dropdown-item" href="#">Editar publicación</a></li>
+                <li><a class="dropdown-item" href="#">Eliminar publicación</a></li>
+                <li><a class="dropdown-item" href="#">Reportar publicación</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="post mb-4 p-3 bg-dark text-white rounded shadow-sm">
+          <h6 class="fw-bold">Usuario987 <span class="text-muted">hace 1 semana</span></h6>
+          <p>Necesito ayuda para optimizar consultas SQL en mi base de datos MySQL...</p>
+          <div class="d-flex justify-content-between">
+            <div>
+              <button class="btn btn-outline-light btn-sm"><i class="bi bi-hand-thumbs-up"></i> 30</button>
+              <button class="btn btn-outline-light btn-sm"><i class="bi bi-chat"></i> 15</button>
+            </div>
+            <div class="dropdown">
+              <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="postOptions"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <i class="bi bi-three-dots"></i>
+              </button>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="postOptions">
+                <li><a class="dropdown-item" href="#">Editar publicación</a></li>
+                <li><a class="dropdown-item" href="#">Eliminar publicación</a></li>
+                <li><a class="dropdown-item" href="#">Reportar publicación</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <!-- Sección de footer -->
+  <!-- Contiene el pie de página con enlaces rápidos, redes sociales y una breve descripción de la plataforma -->
+  <footer class="footer bg-dark text-white py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Logo y descripción -->
+        <div class="col-md-4 mb-4 text-center">
+          <img src="imagenes/LOGO SERVITECH BLANCO.svg" alt="Logo Servitech" style="width: 180px"
+            class="mb-3 footer-logo" />
+          <p class="text-center">
+            Plataforma de aprendizaje digital que conecta expertos con
+            personas interesadas en aprender y mejorar sus habilidades.
+          </p>
+        </div>
+        <!-- Enlaces rápidos -->
+        <div class="col-md-4 mb-4 text-center text-md-start">
+          <h5 class="text-uppercase">Enlaces rápidos</h5>
+          <ul class="list-unstyled">
+            <li><a href="index.html" class="text-white text-decoration-none">Inicio</a></li>
+            <li><a href="feedServitech.html" class="text-white text-decoration-none">Feed</a></li>
+            <li><a href="contacto.html" class="text-white text-decoration-none">Contacto</a></li>
+          </ul>
+        </div>
+        <!-- Redes sociales -->
+        <div class="col-md-4 mb-4 text-center text-md-start">
+          <h5 class="text-uppercase">Síguenos</h5>
+          <div class="d-flex justify-content-center justify-content-md-start gap-3">
+            <a href="#" class="text-white"><i class="bi bi-facebook" style="font-size: 1.5rem"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-twitter" style="font-size: 1.5rem"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-instagram" style="font-size: 1.5rem"></i></a>
+            <a href="#" class="text-white"><i class="bi bi-linkedin" style="font-size: 1.5rem"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-4">
+        <p class="mb-0 text-center">
+          &copy; 2025 SERVITECH. Todos los derechos reservados.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <!-- Incluye los scripts necesarios para el funcionamiento de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+    crossorigin="anonymous"></script>
+  <br />
+</body>
+
+</html>

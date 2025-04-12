@@ -1,0 +1,278 @@
+
+
+/* ============================
+   Estilo para la sección de registro
+   ============================
+   Estilos para el formulario de registro en el modal.
+*/
+/* Estilo para la sección de registro */
+.form-register {
+    width: 400px;
+    background: var(--gris); /* Fondo gris oscuro */
+    padding: 30px;
+    margin: auto;
+    margin-top: 100px;
+    border-radius: 10px; /* Bordes más redondeados */
+    font-family: 'calibri';
+    color: var(--blanco); /* Texto blanco */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Sombra más suave */
+}
+
+.form-register h5 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: var(--amarillo); /* Títulos en amarillo */
+}
+
+.controls {
+    width: 100%;
+    background: var(--grisClaro); /* Fondo gris claro */
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    border: 1px solid var(--amarillo); /* Borde azul claro */
+    font-family: 'calibri';
+    font-size: 18px;
+    color: var(--blanco); /* Texto blanco */
+}
+
+.form-register p {
+    height: 40px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 40px;
+    color: var(--blanco); /* Texto blanco */
+}
+
+.form-register a {
+    color: var(--azul-claro); /* Enlaces en azul claro */
+    text-decoration: none;
+}
+
+.form-register a:hover {
+    color: var(--amarillo); /* Enlaces en amarillo al pasar el cursor */
+    text-decoration: underline;
+}
+
+.form-register .botons {
+    width: 100%;
+    background: var(--amarillo); /* Fondo amarillo */
+    border: none;
+    padding: 12px;
+    color: var(--negro); /* Texto negro */
+    margin: 16px 0;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.form-register .botons:hover {
+    background: var(--blanco); /* Fondo azul claro al pasar el cursor */
+    color: var(--negro); /* Texto blanco */
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+/* ============================
+   Estilo sección de búsqueda de expertos
+   ============================
+   Estilos para la sección de búsqueda de expertos.
+*/
+/* Estilo sección de búsqueda de expertos */
+.search-expert-section {
+    background-color: var(--negro); /* Fondo negro */
+    color: var(--blanco); /* Texto blanco */
+}
+
+.search-expert-section .card {
+    border: 1px solid var(--amarillo); /* Borde amarillo */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+}
+
+.search-expert-section .form-label {
+    font-family: var(--fuente-texto-regular);
+    font-size: var(--tam-texto-descriptivo);
+    font-weight: var(--peso-texto-regular);
+}
+
+.search-expert-section .input-group-text {
+    border-radius: 0; /* Sin bordes redondeados */
+}
+
+.search-expert-section .btn-warning {
+    font-family: var(--fuente-texto-regular);
+    font-size: var(--tam-texto-regular);
+    font-weight: var(--peso-texto-regular);
+}
+
+/* ============================
+   Estilo sección de tarjetas de expertos
+   ============================
+   Estilos para las tarjetas de expertos.
+*/
+/* Estilo sección de tarjetas de expertos */
+.expert-cards-section {
+    background-color: var(--negro); /* Fondo negro */
+    color: var(--blanco); /* Texto blanco */
+}
+
+.expert-cards-section .card {
+    background-color: var(--blanco); /* Fondo blanco */
+    border: 1px solid var(--amarillo); /* Borde amarillo */
+    border-radius: 12px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    padding: 20px; /* Espaciado interno */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.expert-cards-section .card-img-container {
+    width: 100px; /* Tamaño proporcional de la imagen */
+    height: 100px;
+    overflow: hidden;
+    border: 3px solid var(--amarillo); /* Borde amarillo */
+    border-radius: 50%; /* Hacer la imagen circular */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px; /* Espaciado inferior */
+}
+
+.expert-cards-section .card-img-top {
+    width: 100%; /* Ajustar la imagen al contenedor */
+    height: auto;
+}
+
+.expert-cards-section .card-title {
+    font-family: var(--fuente-titulo);
+    font-size: calc(var(--tam-subtitulo) * 0.9); /* Tamaño proporcional */
+    font-weight: var(--peso-titulo);
+    color: var(--negro); /* Texto negro */
+    margin-top: 10px; /* Espaciado superior */
+}
+
+.expert-cards-section .card-text {
+    font-family: var(--fuente-texto-regular);
+    font-size: calc(var(--tam-texto-descriptivo) * 0.9); /* Tamaño proporcional */
+    color: var(--negro); /* Texto negro */
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 10px; /* Espaciado inferior */
+}
+
+.expert-cards-section .badge {
+    font-family: var(--fuente-texto-regular);
+    font-size: calc(var(--tam-texto-descriptivo) * 0.8); /* Tamaño proporcional */
+    padding: 5px 10px;
+    border-radius: 12px;
+}
+
+.expert-cards-section .btn-warning,
+.expert-cards-section .btn-primary {
+    font-family: var(--fuente-texto-regular);
+    font-size: calc(var(--tam-texto-regular) * 0.9); /* Tamaño proporcional */
+    font-weight: var(--peso-texto-regular);
+    padding: 8px 15px; /* Espaciado interno */
+}
+
+/* Estilo para el botón "Ver más perfil" */
+.card-footer .btn-outline-secondary {
+    font-family: var(--fuente-texto-regular);
+    font-size: calc(var(--tam-texto-regular) * 0.9); /* Tamaño proporcional */
+    font-weight: var(--peso-texto-regular);
+    padding: 8px 15px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+.card-footer .btn-outline-secondary:hover {
+    background-color: var(--amarillo); /* Fondo amarillo al pasar el cursor */
+    color: var(--negro); /* Texto negro */
+    border-color: var(--amarillo); /* Borde amarillo */
+}
+
+/* Estilo para el botón "Ver más expertos" */
+.btn-secondary {
+    background-color: #6c757d; /* Color gris oscuro */
+    color: #ffffff; /* Texto blanco */
+    border: none; /* Sin borde */
+    font-family: var(--fuente-texto-regular);
+    font-size: calc(var(--tam-texto-regular) * 0.9);
+    padding: 10px 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268; /* Color gris más oscuro al pasar el cursor */
+    transform: scale(1.05); /* Efecto de agrandamiento */
+}
+
+/* Ajustes para pantallas medianas (tablets) */
+@media (max-width: 992px) {
+    .expert-cards-section .card {
+        padding: 15px; /* Reducir el padding interno */
+    }
+
+    .expert-cards-section .card-img-container {
+        width: 80px; /* Reducir el tamaño de la imagen */
+        height: 80px;
+    }
+
+    .expert-cards-section .card-title {
+        font-size: calc(var(--tam-subtitulo) * 0.8); /* Reducir el tamaño del título */
+    }
+
+    .expert-cards-section .card-text {
+        font-size: calc(var(--tam-texto-descriptivo) * 0.9); /* Reducir el tamaño del texto */
+    }
+
+    .expert-cards-section .badge {
+        font-size: calc(var(--tam-texto-descriptivo) * 0.8); /* Reducir el tamaño de las etiquetas */
+        padding: 4px 8px; /* Ajustar el padding de las etiquetas */
+    }
+
+    .expert-cards-section .btn-warning,
+    .expert-cards-section .btn-primary {
+        font-size: calc(var(--tam-texto-regular) * 0.9); /* Reducir el tamaño de los botones */
+        padding: 6px 10px; /* Ajustar el padding de los botones */
+    }
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 768px) {
+    .expert-cards-section .card {
+        margin-bottom: 20px; /* Añadir espacio entre tarjetas */
+    }
+
+    .expert-cards-section .card-img-container {
+        width: 70px; /* Reducir aún más el tamaño de la imagen */
+        height: 70px;
+    }
+
+    .expert-cards-section .card-title {
+        font-size: calc(var(--tam-subtitulo) * 0.7); /* Reducir el tamaño del título */
+    }
+
+    .expert-cards-section .card-text {
+        font-size: calc(var(--tam-texto-descriptivo) * 0.8); /* Reducir el tamaño del texto */
+    }
+
+    .expert-cards-section .badge {
+        font-size: calc(var(--tam-texto-descriptivo) * 0.7); /* Reducir el tamaño de las etiquetas */
+        padding: 3px 6px; /* Ajustar el padding de las etiquetas */
+    }
+
+    .expert-cards-section .btn-warning,
+    .expert-cards-section .btn-primary {
+        font-size: calc(var(--tam-texto-regular) * 0.8); /* Reducir el tamaño de los botones */
+        padding: 5px 8px; /* Ajustar el padding de los botones */
+    }
+}
+
+/* Transiciones suaves */
+.expert-cards-section .card,
+.expert-cards-section .btn {
+    transition: all 0.3s ease-in-out; /* Transición suave para cambios */
+}
+
